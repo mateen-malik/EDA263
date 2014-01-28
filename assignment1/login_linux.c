@@ -11,10 +11,9 @@
 #include <signal.h>
 #include <pwd.h>
 #include <sys/types.h>
-// #include <crypt.h>
+#include <crypt.h>
 #include <unistd.h>
-/* Uncomment next line in step 2 */
-/* #include "pwent.h" */
+#include "pwent.h"
 
 #define TRUE 1
 #define FALSE 0
@@ -28,7 +27,7 @@ void sighandler() {
 
 int main(int argc, char *argv[]) {
 
-	struct passwd *pwd; /* this has to be redefined in step 2 */
+	struct mypwent *pwd; /* this has to be redefined in step 2 */
 	/* see pwent.h */
 
 	char important[LENGTH] = "***IMPORTANT***";
@@ -37,7 +36,7 @@ int main(int argc, char *argv[]) {
 	//char   *c_pass; //you might want to use this variable later...
 	char prompt[] = "password: ";
 	char *user_pass;
-
+	char *hash;
 	sighandler();
 
 	while (TRUE) {
@@ -57,18 +56,14 @@ int main(int argc, char *argv[]) {
 				LENGTH - 1, LENGTH - 1, important);
 
 		user_pass = getpass(prompt);
-		pwd =  getpwnam(user);
+		pwd =  mygetpwnam(user);
 
 		if (pwd != NULL) {
 			/* You have to encrypt user_pass for this to work */
 			/* Don't forget to include the salt */
-
-			//if (strcmp(user_pass, passwddata->pw_passwd) == 0) {
-			printf("First\n\n");
-			printf("user_pass: %s\n", user_pass);
-			printf("pw_passwd: %s\n", pwd->pw_passwd);
-
-			char *hash = crypt(user_pass, pwd->pw_passwd); 
+			printf("Password: %s\n", user_pass);
+			printf("Saltish: %s\n", pwd->passwd_salt);
+			hash = "hash"; //crypt(user_pass, pwd->passwd_salt); 
 			printf("Hash: %s\n", hash);
 			if (!strcmp(pwd->pw_passwd, hash)) {
 
