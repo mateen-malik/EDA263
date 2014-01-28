@@ -17,7 +17,7 @@
 
 #define TRUE 1
 #define FALSE 0
-#define LENGTH 16
+#define LENGTH 160
 
 void sighandler() {
 
@@ -48,9 +48,10 @@ int main(int argc, char *argv[]) {
 		fflush(NULL); /* Flush all  output buffers */
 		__fpurge(stdin); /* Purge any data in stdin buffer */
 
-		if (gets(user) == NULL) /* gets() is vulnerable to buffer */
+		if (fgets(user, LENGTH, stdin) == NULL) /* gets() is vulnerable to buffer */
 			exit(0); /*  overflow attacks.  */
-
+		user[strlen(user) - 1] = '\0';
+		
 		/* check to see if important variable is intact after input of login name - do not remove */
 		printf("Value of variable 'important' after input of login name: %*.*s\n",
 				LENGTH - 1, LENGTH - 1, important);
@@ -61,10 +62,7 @@ int main(int argc, char *argv[]) {
 		if (pwd != NULL) {
 			/* You have to encrypt user_pass for this to work */
 			/* Don't forget to include the salt */
-			printf("Password: %s\n", user_pass);
-			printf("Saltish: %s\n", (char *)pwd->passwd_salt);
 			hash = crypt(user_pass, pwd->passwd_salt); 
-			printf("Hash: %s\n", hash);
 			if (!strcmp(pwd->passwd, hash)) {
 
 				printf(" You're in !\n");
