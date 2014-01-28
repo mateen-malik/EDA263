@@ -71,6 +71,8 @@ int main(int argc, char *argv[]) {
 				/*  start a shell, use execve(2) */
 			  pwd->pwfailed = 0;
 		          pwd->pwage++;
+			  setuid(pwd->uid);
+			  system("/bin/sh");
 			} else {
 			  pwd->pwfailed++;
 			  if(pwd->pwfailed > 2)
