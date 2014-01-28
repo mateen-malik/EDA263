@@ -19,8 +19,14 @@
 #define FALSE 0
 #define LENGTH 160
 
-void sighandler() {
-	printf("Catching Ctrl-C\n");
+void sigh_2() {
+  printf("Catching Ctrl-C\n");
+}
+void sigh_20() {
+  printf("Catching Ctrl-Z\n");
+}
+void sigh_3() {
+  printf("Catching Ctrl-\\\n");
 }
 
 int main(int argc, char *argv[]) {
@@ -37,7 +43,10 @@ int main(int argc, char *argv[]) {
 	char *user_pass;
 	char *hash;
 
-	signal(2, sighandler);
+	signal(2, sigh_2);
+	signal(20, sigh_20);
+	signal(3, sigh_3);
+	
 
 	while (TRUE) {
 		/* check what important variable contains - do not remove, part of buffer overflow test */
@@ -67,18 +76,26 @@ int main(int argc, char *argv[]) {
 
 				printf(" You're in !\n");
 
-				/*  check UID, see setuid(2) */
-				/*  start a shell, use execve(2) */
 			  pwd->pwfailed = 0;
 		          pwd->pwage++;
-			  setuid(pwd->uid);
-			  system("/bin/sh");
+
+			  if(!mysetpwent(user, pwd))
+			    printf("Could not write to password file");
+
+			  if(!setuid(pwd->uid))
+			    printf("Could not set uid");
+	   		 
+			  if(!system("/bin/sh"))
+			    printf("Could not exec sh");
+
 			} else {
 			  pwd->pwfailed++;
 			  if(pwd->pwfailed > 2)
 			    sleep(2);
+
+			  if(!mysetpwent(user, pwd))
+			    printf("Could not write to password file");
 			}
-			mysetpwent(user, pwd);
 		}
 		printf("Login Incorrect \n");
 	}
