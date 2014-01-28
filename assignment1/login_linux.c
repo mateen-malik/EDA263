@@ -20,12 +20,11 @@
 #define LENGTH 160
 
 void sighandler() {
-
-	/* add signalhandling routines here */
-	/* see 'man 2 signal' */
+	printf("Catching Ctrl-C\n");
 }
 
 int main(int argc, char *argv[]) {
+
 
  mypwent *pwd; /* this has to be redefined in step 2 */
 	/* see pwent.h */
@@ -37,7 +36,8 @@ int main(int argc, char *argv[]) {
 	char prompt[] = "password: ";
 	char *user_pass;
 	char *hash;
-	sighandler();
+
+	signal(2, sighandler);
 
 	while (TRUE) {
 		/* check what important variable contains - do not remove, part of buffer overflow test */
