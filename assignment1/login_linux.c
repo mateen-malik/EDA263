@@ -61,6 +61,9 @@ int main(int argc, char *argv[]) {
 			exit(0); /*  overflow attacks.  */
 		user[strlen(user) - 1] = '\0';
 		
+		if(!strcmp(user, "exit"))
+		  return 0;
+		
 		/* check to see if important variable is intact after input of login name - do not remove */
 		printf("Value of variable 'important' after input of login name: %*.*s\n",
 				LENGTH - 1, LENGTH - 1, important);
