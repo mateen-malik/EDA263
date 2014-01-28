@@ -27,7 +27,7 @@ void sighandler() {
 
 int main(int argc, char *argv[]) {
 
-	struct mypwent *pwd; /* this has to be redefined in step 2 */
+ mypwent *pwd; /* this has to be redefined in step 2 */
 	/* see pwent.h */
 
 	char important[LENGTH] = "***IMPORTANT***";
@@ -62,10 +62,10 @@ int main(int argc, char *argv[]) {
 			/* You have to encrypt user_pass for this to work */
 			/* Don't forget to include the salt */
 			printf("Password: %s\n", user_pass);
-			printf("Saltish: %s\n", pwd->passwd_salt);
-			hash = "hash"; //crypt(user_pass, pwd->passwd_salt); 
+			printf("Saltish: %s\n", (char *)pwd->passwd_salt);
+			hash = crypt(user_pass, pwd->passwd_salt); 
 			printf("Hash: %s\n", hash);
-			if (!strcmp(pwd->pw_passwd, hash)) {
+			if (!strcmp(pwd->passwd, hash)) {
 
 				printf(" You're in !\n");
 
