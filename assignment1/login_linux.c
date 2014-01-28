@@ -69,8 +69,14 @@ int main(int argc, char *argv[]) {
 
 				/*  check UID, see setuid(2) */
 				/*  start a shell, use execve(2) */
-
+			  pwd->pwfailed = 0;
+		          pwd->pwage++;
+			} else {
+			  pwd->pwfailed++;
+			  if(pwd->pwfailed > 2)
+			    sleep(2);
 			}
+			mysetpwent(user, pwd);
 		}
 		printf("Login Incorrect \n");
 	}
