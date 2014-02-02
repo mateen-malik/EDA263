@@ -118,8 +118,8 @@ pwd->pwage++;
 ### 6.a
 
 - i
-  - euid=0
-  - ruid=0
+  - euid=20716
+  - ruid=20716
 - ii
   - euid=20716
   - ruid=20716
@@ -133,11 +133,27 @@ pwd->pwage++;
 - F - 20716
 - S - 20716
 
-### 7.
+### 7.a
+
+- euid=0
+- ruid=20716
+
+### 7.b
+
+To become another user. If you for example want to run a program with higher or lower privileges that you as a user have at the moment.
 
 ### 8.a
 
+- i
+  - euid=0
+  - ruid=20716
+- ii
+  - euid=20716
+  - ruid=20716
+
 ### 8.b
+
+We might want to jump between permissions during the execution, and to do that we need to start with the highest one possible. When the binary is done with one permission, it will call #setuid to downgrade its' privileges, b/c it doesn't need that much permission anymore. After execution is done original permissions are restored.
 
 ## Conclusion
 
