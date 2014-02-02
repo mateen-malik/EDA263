@@ -22,6 +22,7 @@ pwd->pwage++;
 
 - good stuff
   - hacker might get an old password
+  - it can avoid the replay attack
 
 - bad stuff
   - the user might write the password down
