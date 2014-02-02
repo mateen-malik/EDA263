@@ -72,8 +72,21 @@ pwd->pwage++;
       - not very hygienic (fingerprint reading)
       - you might lose your biometric (like your eye)
       - difficult and expensive to implement
+      - might not be very accurate, missmatching for i.e
 
 ### 3.c
+
+- password
+  - we can educate the user about not writing the password down and how to remember and to create rememberable passwords.
+  - use better hashing algorithms, like blow fish instead of md5
+  - use a unique salt for every user to prevent rainbow table-attacks
+- key cards
+  - send the keycard in a safe way (rec post in sweden) or force the user to pick it up at "the office" by him/her self.
+  - add more layers of authentication, like a password for i.e
+- biometric
+  - use a system which doesn't require the user to touch everyting, like a voice authentication system.
+  - use a backup authentication system, like a really complicated password to prevent you losing you arm or an eye.
+  - use an biometric authentication that has been tested and proven to work
 
 ### 4.a
 
