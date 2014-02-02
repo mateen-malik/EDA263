@@ -67,7 +67,7 @@ pwd->pwage++;
       - the user don't have to bring anything
       - difficult to lose
     - cons
-      - can't be used by everyone
+      - can't be used by everyone, i.e. disable people
       - not very hygienic (fingerprint reading)
       - you might lose your biometric (like your eye)
       - difficult and expensive to implement
