@@ -20,87 +20,105 @@
 #define LENGTH 160
 
 void sigh_2() {
-  printf("Catching Ctrl-C\n");
+  // printf("Catching Ctrl-C\n");
 }
 void sigh_20() {
-  printf("Catching Ctrl-Z\n");
+  // printf("Catching Ctrl-Z\n");
 }
 void sigh_3() {
-  printf("Catching Ctrl-\\\n");
+  // printf("Catching Ctrl-\\\n");
 }
 
 int main(int argc, char *argv[]) {
+  mypwent *pwd;
+  char important[LENGTH] = "***IMPORTANT***";
+  char user[LENGTH];
+  char prompt[] = "password: ";
+  char *user_pass;
+  char *hash;
 
+  // Prevent C-z, C-x, C-\
+  signal(2, sigh_2);
+  signal(20, sigh_20);
+  signal(3, sigh_3);
 
- mypwent *pwd; /* this has to be redefined in step 2 */
-	/* see pwent.h */
+  while (TRUE) {
+    /* check what important variable contains - do not remove, part of buffer overflow test */
+    printf("Value of variable 'important' before input of login name: %s\n",
+        important);
 
-	char important[LENGTH] = "***IMPORTANT***";
+    printf("login: ");
+    fflush(NULL); /* Flush all  output buffers */
+    __fpurge(stdin); /* Purge any data in stdin buffer */
 
-	char user[LENGTH];
-	//char   *c_pass; //you might want to use this variable later...
-	char prompt[] = "password: ";
-	char *user_pass;
-	char *hash;
+    // Only read LENGTH chars from stdin, to prevent buffer overflows
+    if (fgets(user, LENGTH, stdin) == NULL)
+      exit(0); /*  overflow attacks.  */
 
-	signal(2, sigh_2);
-	signal(20, sigh_20);
-	signal(3, sigh_3);
-	
+    // fgets doesn't end the stream with a null byte
+    // we therefor add one our self
+    user[strlen(user) - 1] = '\0';
+    
+    // we really want to be able to quit the application
+    // the default C-x and C-z has been catched above, so this
+    // is currently the only easy escape out :)
+    if(!strcmp(user, "exit"))
+      return 0;
+    
+    /* check to see if important variable is intact after input of login name - do not remove */
+    printf("Value of variable 'important' after input of login name: %*.*s\n",
+        LENGTH - 1, LENGTH - 1, important);
 
-	while (TRUE) {
-		/* check what important variable contains - do not remove, part of buffer overflow test */
-		printf("Value of variable 'important' before input of login name: %s\n",
-				important);
+    // Read (hidden) password from stdin
+    user_pass = getpass(prompt);
+    // Read password struct from provided username
+    pwd =  mygetpwnam(user);
 
-		printf("login: ");
-		fflush(NULL); /* Flush all  output buffers */
-		__fpurge(stdin); /* Purge any data in stdin buffer */
+    // No user found or invalid data passed?
+    if (pwd != NULL) {
+      // Hash input password with salt from passdb
+      hash = crypt(user_pass, pwd->passwd_salt); 
 
-		if (fgets(user, LENGTH, stdin) == NULL) /* gets() is vulnerable to buffer */
-			exit(0); /*  overflow attacks.  */
-		user[strlen(user) - 1] = '\0';
-		
-		if(!strcmp(user, "exit"))
-		  return 0;
-		
-		/* check to see if important variable is intact after input of login name - do not remove */
-		printf("Value of variable 'important' after input of login name: %*.*s\n",
-				LENGTH - 1, LENGTH - 1, important);
+      // Does our hash correspond do the hashed password in passdb?
+      if (!strcmp(pwd->passwd, hash)) {
 
-		user_pass = getpass(prompt);
-		pwd =  mygetpwnam(user);
+        printf("You're in !\n");
 
-		if (pwd != NULL) {
-			/* You have to encrypt user_pass for this to work */
-			/* Don't forget to include the salt */
-			hash = crypt(user_pass, pwd->passwd_salt); 
-			if (!strcmp(pwd->passwd, hash)) {
+        // Reset number of failed logins
+        pwd->pwfailed = 0;
 
-				printf(" You're in !\n");
+        // Increment password age
+        pwd->pwage++;
 
-			  pwd->pwfailed = 0;
-		          pwd->pwage++;
+        // Update user credentionals
+        // Print error if failed
+        if(!mysetpwent(user, pwd))
+          printf("Could not write to password file");
 
-			  if(!mysetpwent(user, pwd))
-			    printf("Could not write to password file");
+        // Execute /bin/sh using the users' uuid
+        // If failed, print an error message
+        if(!setuid(pwd->uid))
+          printf("Could not set uid");
+         
+        if(!system("/bin/sh"))
+          printf("Could not exec sh");
 
-			  if(!setuid(pwd->uid))
-			    printf("Could not set uid");
-	   		 
-			  if(!system("/bin/sh"))
-			    printf("Could not exec sh");
+      } else {
+        // Login failed, increment the failed param in passdb
+        pwd->pwfailed++;
 
-			} else {
-			  pwd->pwfailed++;
-			  if(pwd->pwfailed > 2)
-			    sleep(2);
+        // Prevent attacks by sleeping 2 secs 
+        // if #no failed logins is > 2
+        if(pwd->pwfailed > 2)
+          sleep(2);
 
-			  if(!mysetpwent(user, pwd))
-			    printf("Could not write to password file");
-			}
-		}
-		printf("Login Incorrect \n");
-	}
-	return 0;
+        // Again, try to save user credentionals
+        // Print error on failure
+        if(!mysetpwent(user, pwd))
+          printf("Could not write to password file");
+      }
+    }
+    printf("Login Incorrect \n");
+  }
+  return 0;
 }
