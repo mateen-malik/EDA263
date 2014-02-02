@@ -58,7 +58,6 @@ pwd->pwage++;
       - you need both the password and the physical token, if a password exist
       - a hacker can't eavesdropping, like with a regular password
     - cons
-      - more difficult to expire
       - you need hardware, which might be expensive
       - a hacker might get a hold of the key
       - you need to transport the key to the user, physically - it might get stolen
