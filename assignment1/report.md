@@ -58,7 +58,6 @@ pwd->pwage++;
       - you need both the password and the physical token, if a password exist
       - a hacker can't eavesdropping, like with a regular password
     - cons
-      - more difficult to expire
       - you need hardware, which might be expensive
       - a hacker might get a hold of the key
       - you need to transport the key to the user, physically - it might get stolen
@@ -68,7 +67,7 @@ pwd->pwage++;
       - the user don't have to bring anything
       - difficult to lose
     - cons
-      - can't be used by everyone
+      - can't be used by everyone, i.e. disable people
       - not very hygienic (fingerprint reading)
       - you might lose your biometric (like your eye)
       - difficult and expensive to implement
