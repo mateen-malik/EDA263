@@ -10,6 +10,14 @@
 
 ### 1.
 
+Password ageing is when a password gets thrown away after a certain period of time. The age might be based on the number of logins, like in our case. Every time a successfull login has occurd, the age parameter for the particular user is incremented.
+
+We use this particular code to implement password ageing.
+
+```
+pwd->pwage++;
+```
+
 ### 2.
 
 ### 3.a
