@@ -122,7 +122,7 @@ pwd->pwage++;
   - ruid=0
 - ii
   - euid=20716
-  - ruid=0
+  - ruid=20716
 
 ### 6.b
 
