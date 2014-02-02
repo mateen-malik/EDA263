@@ -45,7 +45,7 @@ pwd->pwage++;
       - no hardware
       - easy to expire
       - hidden, if the user don't write it down
-      - cheep to implement
+      - cheap to implement
         - user can pick its' own password
         - generate password, no cpu power
       - can be provided via electronics from a distance, i.e email
@@ -89,17 +89,49 @@ pwd->pwage++;
 
 ### 4.a
 
+- keycard
+  - need access to a physical location, which makes using a keycard easier than password and username
+  - a lot of users, which makes keycard cheap to implement
+
 ### 4.b
+
+- biometric
+  - we need high security
+  - nothing to be stolen <==> lower risk of intrusion
+  - not that many users, which makes a biometric authentication easier and cheaper to implement
 
 ### 4.c
 
+- keycard
+  - same as university
+
 ### 4.d
+
+- password
+  - low risk of intrusion
+  - easy to remember and implement
 
 ### 5.
 
+- to ensure that we as a user don't pass sensitive information to the wrong system
+
 ### 6.a
 
+- i
+  - euid=0
+  - ruid=0
+- ii
+  - euid=20716
+  - ruid=0
+
 ### 6.b
+
+- S - 0
+- S - 20757
+- S - 20716
+- F - 20716
+- F - 20716
+- S - 20716
 
 ### 7.
 
