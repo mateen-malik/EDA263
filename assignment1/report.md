@@ -41,31 +41,31 @@ pwd->pwage++;
 
 - User knows: password, pin code
   - pros
-    - Easy and cheap to implement
-    - User can pick its' own password and change it easily
-    - Can be provided via electronics from a distance, i.e email
+    - Easy and cheap to implement.
+    - User can pick its' own password and change it easily.
+    - Can be provided via electronics from a distance, i.e email.
   - cons
-    - The user might write it down. good for hackers, bad for the system
-    - The electronic media, like the email can be hacked
+    - The user might write it down. good for hackers, bad for the system.
+    - The electronic media, like the email can be hacked.
     - Stored in a database with or without encryption, which might be accessed by a hacked using some cpu power.
 - User has: key card, smart card, regular keys
   - pros
-    - You need both the password and the physical token, if a password exists
-    - A hacker can't eavesdropping, like with a regular password
+    - You need both the password and the physical token, if a password exists, more layers of security.
+    - A hacker can't eavesdropping, like with a regular password.
   - cons
-    - You need hardware, which might be expensive
-    - A hacker might get a hold of the key
-    - You need to transport the key to the user, physically - it might get stolen
+    - You need hardware, which might be expensive.
+    - A hacker might get a hold of the key.
+    - You need to transport the key to the user, physically - it might get stolen.
 - User is: biometrics, fingerprint, eyeball, voice
   - pros
-    - Difficult to copy, nothing to eavesdrop
-    - The user don't have to bring anything
-    - Difficult to lose
+    - Difficult to copy, nothing to eavesdrop.
+    - The user don't have to bring anything.
+    - Difficult to lose.
   - cons
-    - Can't be used by everyone, i.e. disable people
-    - You might lose your biometric (like your eye)
-    - Difficult and expensive to implement
-    - Might not be very accurate, missmatching for i.e
+    - Can't be used by everyone, i.e. disable people.
+    - You might lose your biometric (like your eye).
+    - Difficult and expensive to implement.
+    - Might not be very accurate, missmatching for i.e.
 
 ### 3.c
 
