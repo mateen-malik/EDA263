@@ -2,7 +2,7 @@
 
 - Group 27
   - Linus Oleander, 8806134873
-  - Bill :)
+  - Hsin-Kai Chen, 920412C355
 
 ## Introduction
 
@@ -38,40 +38,33 @@ pwd->pwage++;
 
 ### 3b
 
-- knows
-  - password, pin code
-    - pros
-      - easy to implement
-      - no hardware
-      - easy to expire
-      - hidden, if the user don't write it down
-      - cheap to implement
-        - user can pick its' own password
-        - generate password, no cpu power
-      - can be provided via electronics from a distance, i.e email
-    - cons
-      - the user might write it down. good for hackers, bad for the system
-      - the electronic media, like the email can be hacked
-      - stored in a database with or without encryption, which might be accessed by a hacked using some cpu power.
-  - key card, smart card, regular keys
-    - pros
-      - you need both the password and the physical token, if a password exist
-      - a hacker can't eavesdropping, like with a regular password
-    - cons
-      - you need hardware, which might be expensive
-      - a hacker might get a hold of the key
-      - you need to transport the key to the user, physically - it might get stolen
-  - biometrics, fingerprint, eyeball, voice
-    - pros
-      - difficult to copy, nothing to eavesdrop
-      - the user don't have to bring anything
-      - difficult to lose
-    - cons
-      - can't be used by everyone, i.e. disable people
-      - not very hygienic (fingerprint reading)
-      - you might lose your biometric (like your eye)
-      - difficult and expensive to implement
-      - might not be very accurate, missmatching for i.e
+- User knows: password, pin code
+  - pros
+    - Easy and cheap to implement.
+    - User can pick its' own password and change it easily.
+    - Can be provided via electronics from a distance, i.e email.
+  - cons
+    - The user might write it down. good for hackers, bad for the system.
+    - The electronic media, like the email can be hacked.
+    - Stored in a database with or without encryption, which might be accessed by a hacked using some cpu power.
+- User has: key card, smart card, regular keys
+  - pros
+    - You need both the password and the physical token, if a password exists, more layers of security.
+    - A hacker can't eavesdropping, like with a regular password.
+  - cons
+    - You need hardware, which might be expensive.
+    - A hacker might get a hold of the key.
+    - You need to transport the key to the user, physically - it might get stolen.
+- User is: biometrics, fingerprint, eyeball, voice
+  - pros
+    - Difficult to copy, nothing to eavesdrop.
+    - The user don't have to bring anything.
+    - Difficult to lose.
+  - cons
+    - Can't be used by everyone, i.e. disable people.
+    - You might lose your biometric (like your eye).
+    - Difficult and expensive to implement.
+    - Might not be very accurate, missmatching for i.e.
 
 ### 3.c
 
@@ -141,7 +134,7 @@ To ensure that we as a user don't pass sensitive information to the wrong system
 
 ### 7.b
 
-To become another user. If you for example want to run a program with higher or lower privileges that you as a user have at the moment.
+To have the higher or lower privileges when running a program, which can be more convenient or safe.
 
 ### 8.a
 
@@ -154,7 +147,7 @@ To become another user. If you for example want to run a program with higher or 
 
 ### 8.b
 
-We might want to jump between permissions during the execution, and to do that we need to start with the highest one possible. When the binary is done with one permission, it will call #setuid to downgrade its' privileges, b/c it doesn't need that much permission anymore. After execution is done original permissions are restored.
+We might want to jump between permissions during the execution, and to do that we need to start with the highest one possible. When the binary is done with one permission, it will call #setuid to downgrade its' privileges, b/c it doesn't need that much permission anymore. After execution is done, original permission is restored.
 
 ## Conclusion
 
