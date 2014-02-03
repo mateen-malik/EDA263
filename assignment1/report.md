@@ -33,38 +33,38 @@ pwd->pwage++;
 
 ### 3a
 
-- password
-  - database with hashed passwords and a front end with a login form
-- key card
-  - a key card reader and a database with tokens based on the information on the card that the user will end up with.
-- biometrics
-  - we need to enroll the user into the system using for the example a fingerprint reader.
+- Password
+  - Database with hashed passwords and a front end with a login form.
+- Key card
+  - A key card reader and a database with tokens based on the information on the card that the user will end up with.
+- Biometrics
+  - We need to enroll the user into the system using for the example a fingerprint reader.
 
 ### 3b
 
 - User knows: password, pin code
-  - pros
+  - Advantages
     - Easy and cheap to implement.
     - User can pick its' own password and change it easily.
     - Can be provided via electronics from a distance, i.e email.
-  - cons
+  - Disadvantages
     - The user might write it down. good for hackers, bad for the system.
     - The electronic media, like the email can be hacked.
     - Stored in a database with or without encryption, which might be accessed by a hacked using some cpu power.
 - User has: key card, smart card, regular keys
-  - pros
+  - Advantages
     - You need both the password and the physical token, if a password exists, more layers of security.
     - A hacker can't eavesdropping, like with a regular password.
-  - cons
+  - Disadvantages
     - You need hardware, which might be expensive.
     - A hacker might get a hold of the key.
     - You need to transport the key to the user, physically - it might get stolen.
 - User is: biometrics, fingerprint, eyeball, voice
-  - pros
+  - Advantages
     - Difficult to copy, nothing to eavesdrop.
     - The user don't have to bring anything.
     - Difficult to lose.
-  - cons
+  - Disadvantages
     - Can't be used by everyone, i.e. disable people.
     - You might lose your biometric (like your eye).
     - Difficult and expensive to implement.
