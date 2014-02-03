@@ -42,13 +42,8 @@ pwd->pwage++;
 - knows
   - password, pin code
     - pros
-      - easy to implement
-      - no hardware
-      - easy to expire
-      - hidden, if the user don't write it down
-      - cheap to implement
-        - user can pick its' own password
-        - generate password, no cpu power
+      - easy and cheap to implement
+      - user can pick its' own password and change it easily
       - can be provided via electronics from a distance, i.e email
     - cons
       - the user might write it down. good for hackers, bad for the system
@@ -56,7 +51,7 @@ pwd->pwage++;
       - stored in a database with or without encryption, which might be accessed by a hacked using some cpu power.
   - key card, smart card, regular keys
     - pros
-      - you need both the password and the physical token, if a password exist
+      - you need both the password and the physical token, if a password exists
       - a hacker can't eavesdropping, like with a regular password
     - cons
       - you need hardware, which might be expensive
@@ -69,7 +64,6 @@ pwd->pwage++;
       - difficult to lose
     - cons
       - can't be used by everyone, i.e. disable people
-      - not very hygienic (fingerprint reading)
       - you might lose your biometric (like your eye)
       - difficult and expensive to implement
       - might not be very accurate, missmatching for i.e
