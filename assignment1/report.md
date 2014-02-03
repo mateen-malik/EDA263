@@ -155,6 +155,6 @@ We might want to jump between permissions during the execution, and to do that w
 
 ## Conclusion
 
-Picking a proper authentication system is just haft the battle. Analysing the environment and adjusting the security with respect to the platform and spending time educating the user is as important as chosing a secure authentication system. To high of a security level might result in users *cheating* by writing his/her password down or leaving their keycard in wide open. To low might result in intruders getting in way to easy.
+Picking a proper authentication system is just half the battle. Analysing the environment and adjusting the security with respect to the platform and spending time educating the user is as important as chosing a secure authentication system. To high of a security level might result in users *cheating* by writing his/her password down or leaving their keycard in wide open. To low might result in intruders getting in way to easy.
 
 ## Code
