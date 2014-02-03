@@ -134,7 +134,7 @@ pwd->pwage++;
 
 ### 7.b
 
-To become another user. If you for example want to run a program with higher or lower privileges that you as a user have at the moment.
+To have the higher or lower privileges when running a program, which can be more convenient or safe.
 
 ### 8.a
 
