@@ -6,8 +6,6 @@
 
 ## Introduction
 
-In this lab we have to know how different ways of authentications work, and the individual's advanteages and disadvantages, and how can we put it into practice. We also need to know how SUID works, the difference between ruid and euid, and the concept of upgrade or downgrade priviledges while running a program. After this lab we should get more knowledges about the authentication of computer security.
-
 ## Answers
 
 ### 1.
@@ -24,13 +22,12 @@ pwd->pwage++;
 
 ### 2.
 
-- good stuff
-  - hacker might get an old password
-  - it can avoid the replay attack
+- Advantages
+  - If the hacker get a hold of the users' password, for example from a leakt database, it might already be expired.
 
-- bad stuff
-  - the user might write the password down
-  - the user might pick an easy password to be able to remember it
+- Disadvantages
+  - A continuously changing password might be tempting to write down.
+  - The user might pick an easy password to be able to remember it.
 
 ### 3a
 
@@ -73,45 +70,46 @@ pwd->pwage++;
 
 ### 3.c
 
-- password
-  - we can educate the user about not writing the password down and how to remember and to create rememberable passwords.
-  - use better hashing algorithms, like blow fish instead of md5
-  - use a unique salt for every user to prevent rainbow table-attacks
-- key cards
-  - send the keycard in a safe way (rec post in sweden) or force the user to pick it up at "the office" by him/her self.
-  - add more layers of authentication, like a password for i.e
-- biometric
-  - use a system which doesn't require the user to touch everyting, like a voice authentication system.
-  - use a backup authentication system, like a really complicated password to prevent you losing you arm or an eye.
-  - use an biometric authentication that has been tested and proven to work
+- Password
+  - We can educate the user about security breaches, for example writing the assword down and to create rememberable passwords.
+  - Use better hashing algorithms, like Blowfish instead of md5 which is slower/more secure to use.
+  - Use a unique salt for every user to prevent rainbow table-attacks
+- Key cards
+  - Send the keycard in a safe way or force the user to pick it up at "the office" by him/her self.
+  - Add more layers of authentication, like a password authentication
+- Biometric
+  - Use a system which doesn't require the user to touch everyting, like a voice authentication system.
+  - Use a backup authentication system, like a really complicated password to prevent hostage situations.
+  - Use an biometric authentication that has been tested and proven to work.
 
 ### 4.a
 
-- keycard
-  - need access to a physical location, which makes using a keycard easier than password and username
-  - a lot of users, which makes keycard cheap to implement
+- Keycard
+  - Need access to a physical location which makes using a keycard easier than password and username.
+  - A lot of users and low budget, which makes keycard cheap to implement, educate and use.
 
 ### 4.b
 
-- biometric
-  - we need high security
-  - nothing to be stolen <==> lower risk of intrusion
-  - not that many users, which makes a biometric authentication easier and cheaper to implement
+- Biometric
+  - We need high security.
+  - Nothing to be stolen, which results in a lower risk of intrusion.
+  - Not that many users (compared to a school), which makes a biometric authentication easier and cheaper to implement.
 
 ### 4.c
 
-- keycard
-  - same as university
+- Keycard
+  - Same as university
 
 ### 4.d
 
-- password
-  - low risk of intrusion
-  - easy to remember and implement
+- Password
+  - Low risk of intrusion
+  - No extra hardware. Most people don't want to buy a seperate system for authentication.
+  - Easy to implement.
 
 ### 5.
 
-- to ensure that we as a user don't pass sensitive information to the wrong system
+To ensure that we as a user don't pass sensitive information to the wrong system.
 
 ### 6.a
 
