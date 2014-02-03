@@ -147,7 +147,7 @@ To have the higher or lower privileges when running a program, which can be more
 
 ### 8.b
 
-We might want to jump between permissions during the execution, and to do that we need to start with the highest one possible. When the binary is done with one permission, it will call #setuid to downgrade its' privileges, b/c it doesn't need that much permission anymore. After execution is done original permissions are restored.
+We might want to jump between permissions during the execution, and to do that we need to start with the highest one possible. When the binary is done with one permission, it will call #setuid to downgrade its' privileges, b/c it doesn't need that much permission anymore. After execution is done, original permission is restored.
 
 ## Conclusion
 
