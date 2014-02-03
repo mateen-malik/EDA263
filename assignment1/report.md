@@ -10,12 +10,14 @@
 
 ### 1.
 
-Password ageing is when a password gets marked everytime a successfull login has occured. In our case the age parameter is being incremented for the newly logined user.
+Password ageing is a way to ensure that the password hasn't been in use too long. The password might be store together with a timespamp indicating when the password was created/changed. In our case the age parameter is a plain counter that's being incremented every time a user is successfully logined.
 
-This is the code we're using in our implementation.
+This is the code we're using in our implementation to indicate that a password is ageing.
 
 ```
+// login successfully
 pwd->pwage++;
+// update {pwa} on the system
 ```
 
 ### 2.
