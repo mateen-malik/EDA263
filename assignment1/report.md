@@ -2,7 +2,7 @@
 
 - Group 27
   - Linus Oleander, 8806134873
-  - Bill :)
+  - Hsin-Kai Chen, 920412C355
 
 ## Introduction
 
