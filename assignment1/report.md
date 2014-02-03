@@ -6,6 +6,8 @@
 
 ## Introduction
 
+In this lab we have to know how different ways of authentications work, and the individual's advanteages and disadvantages, and how can we put it into practice. We also need to know how SUID works, the difference between ruid and euid, and the concept of upgrade or downgrade priviledges while running a program. After this lab we should get more knowledges about the authentication of computer security.
+
 ## Answers
 
 ### 1.
