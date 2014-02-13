@@ -28,8 +28,7 @@ pwd->pwage++;
   - If the hacker get a hold of the users' password, for example from a leakt database, it might already be expired.
 
 - Disadvantages
-  - A continuously changing password might be tempting to write down.
-  - The user might pick an easy password to be able to remember it.
+  - The password has to be generated and distributed in some way. Two examples are scratch tickets and one-time-password-generating tool like a digipass.
 
 ### 3a
 
