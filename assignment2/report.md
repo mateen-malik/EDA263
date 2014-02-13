@@ -71,3 +71,12 @@ Hsin-Kai Chen: I think I won't use it in the future since that most of my friend
   - Public Key Cryptography
     - 1. The distribution of key is easier to achieve.
     - 2. It is safer because only owner knows his private key.
+
+### 7.
+
+A key is marked as trusted by an owner if:
+
+- You as an owener has signed it personally.
+- It has been signed by one fully trusted key owner.
+- It has been signed by three marginally trusted key owners.
+- The path of signed keys leading from the key in question back to your own key is less than six steps.
