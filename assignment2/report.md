@@ -8,7 +8,7 @@
 
 ### 1.
 
-- Linus Oleander, Group 27, 
+- Linus Oleander, Group 27, 8806134873
 - Hsin-Kai Chen, Group 27, 920412C355
 
 ### 2.
@@ -24,8 +24,6 @@ Here we use the software Thunderbird as our mail client. The reasons that we use
 
 Hsin-Kai Chen: I think I won't use it in the future since that most of my friends are not computer science students. It is too hard for them to decrypt my message using gpg. We don't care about the security of our message that much. But if I want to encrypt my own file, I will consider to use it since it is safer.
 
-Linus: TODO
-
 ### 5. (signing)
 
 - A
@@ -33,6 +31,7 @@ Linus: TODO
     - Only certain users should be able to change data. The data passed 
     to the system can be verified using signing.
   - Availability
+    - We use signing to check that only the legistimate user can get the resources from the system. Otherwise we reject it. This can prevent the distributed Denial-of-Service attacks and ensure the availibilty that every part of the system is functioning correctly and the information is available.
 
 - B (signing)
   1. D = H(M) => Hash message M
@@ -44,6 +43,20 @@ Linus: TODO
 
 ### 6. (encryption)
 
-- Confidentiality
-  - Only certain users should be able to read the data. Using encryption
-  only authorized users has read access.
+- A
+  - Confidentiality
+    - Only certain users should be able to read the data. Using encryption
+    only authorized users has read access.
+    
+- B
+  - Encryption
+    - 1. Generate random key K.
+    - 2. Encrypt the date using key K to D'.
+    - 3. Encrypt K with receiver's public key to K'.
+    - 4. Send D' and K' to receiver.
+
+  - Decryption
+    - 1. Receive D and K.
+    - 2. Use receiver's private key to decrypt K to K'.
+    - 3. Use K' to decrypt D to D'.
+    - 4. D' is the message from sender.
