@@ -62,3 +62,12 @@ Hsin-Kai Chen: I think I won't use it in the future since that most of my friend
     - 2. Use receiver's private key to decrypt K to K'.
     - 3. Use K' to decrypt D to D'.
     - 4. D' is the message from sender.
+- C
+  - Conventional Encryption:
+    - 1. It is fast.
+    - 2. It is simple.
+    - 3. It is low cost.
+
+  - Public Key Cryptography
+    - 1. The distribution of key is easier to achieve.
+    - 2. It is safer because only owner knows his private key.
