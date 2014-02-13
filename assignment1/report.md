@@ -25,10 +25,12 @@ pwd->pwage++;
 ### 2.
 
 - Advantages
-  - If the hacker get a hold of the users' password, for example from a leakt database, it might already be expired.
+  - If the hacker get a hold of the users' password, for example from a leaked database, it might already be expired.
+  - The user doesn't have to remember a password beacause it has already been created.
 
 - Disadvantages
   - The password has to be generated and distributed in some way. Two examples are scratch tickets and one-time-password-generating tool like a digipass.
+  - Can't be remembered. User always needs to carry around their digipass/scratching tickets.
 
 ### 3a
 
