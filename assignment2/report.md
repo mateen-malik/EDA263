@@ -27,16 +27,18 @@ Hsin-Kai Chen: I think I won't use it in the future since that most of my friend
 ### 5. (signing)
 
 - A
+  - Confidentiality
+    - The message isn't secure in that sense that it can be readable by anyone. 
   - Integrity
     - Only certain users should be able to change data. The data passed 
     to the system can be verified using signing.
   - Availability
-    - We use signing to check that only the legistimate user can get the resources from the system. Otherwise we reject it. This can prevent the distributed Denial-of-Service attacks and ensure the availibilty that every part of the system is functioning correctly and the information is available.
+    - We use signing to check that only the legitimate user can get the resources from the system. Otherwise we reject it. This can prevent the distributed Denial-of-Service attacks and ensure the availibilty that every part of the system is functioning correctly and the information is available.
 
 - B (signing)
-  1. D = H(M) => Hash message M
-  2. S = D xor K => Sign hashed value with equal size key K
-  3. Send S,M to receiver
+  - 1. D = H(M) => Hash message M.
+  - 2. S = D xor K => Sign hashed value with equal size key K.
+  - 3. Send S,M to receiver.
 
 - C
   - We can sign a message in two ways; one using a public key encryption and the other one using a hash function. The hash function requires less CPU and can in the case of MD5 compress the message down to 128 bits, which is an advantage if the bandwidth and CPU is slow.
@@ -47,7 +49,7 @@ Hsin-Kai Chen: I think I won't use it in the future since that most of my friend
   - Confidentiality
     - Only certain users should be able to read the data. Using encryption
     only authorized users has read access.
-    
+
 - B
   - Encryption
     - 1. Generate random key K.
