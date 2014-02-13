@@ -81,3 +81,10 @@ A key is marked as trusted by an owner if any of these requirements are meet:
 - It has been signed by three marginally trusted key owners.
 
 ... and the path of signed keys leading from the key in question back to your own key is less than six steps.
+
+### 8.
+
+- a
+  Elena trust: unknown, validity: unknown
+- b
+  Elena trust: unknown, validity: marginal
