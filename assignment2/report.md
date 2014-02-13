@@ -81,3 +81,5 @@ A key is marked as trusted by an owner if any of these requirements are meet:
 - It has been signed by three marginally trusted key owners.
 
 ... and the path of signed keys leading from the key in question back to your own key is less than six steps.
+
+The trusted parameter for a person in you keychain is the truested-value you have set by your self. The validity on the other hand is the calculated value based on your web-of-trust.
