@@ -23,3 +23,23 @@ Here we use the software Thunderbird as our mail client. The reasons that we use
 ### 4.
 
 Hsin-Kai Chen: I think I won't use it in the future since that most of my friends are not computer science students. It is too hard for them to decrypt my message using gpg. We don't care about the security of our message that much. But if I want to encrypt my own file, I will consider to use it since it is safer.
+
+### 5.
+
+Availability
+We use signing to check that only the legistimate user can get the resources from the system. Otherwise we reject it. This can prevent the distributed Denial-of-Service attacks and ensure the availibilty that every part of the system is functioning correctly and the information is available.
+
+### 6.
+
+- B
+  - Encryption
+    - 1. Generate random key K.
+    - 2. Encrypt the date using key K to D'.
+    - 3. Encrypt K with receiver's public key to K'.
+    - 4. Send D' and K' to receiver.
+
+  - Decryption
+    - 1. Receive D and K.
+    - 2. Use receiver's private key to decrypt K to K'.
+    - 3. Use K' to decrypt D to D'.
+    - 4. D' is the message from sender.
