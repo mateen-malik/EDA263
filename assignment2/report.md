@@ -74,9 +74,10 @@ Hsin-Kai Chen: I think I won't use it in the future since that most of my friend
 
 ### 7.
 
-A key is marked as trusted by an owner if:
+A key is marked as trusted by an owner if any of these requirements are meet:
 
 - You as an owener has signed it personally.
 - It has been signed by one fully trusted key owner.
 - It has been signed by three marginally trusted key owners.
-- The path of signed keys leading from the key in question back to your own key is less than six steps.
+
+... and the path of signed keys leading from the key in question back to your own key is less than six steps.
