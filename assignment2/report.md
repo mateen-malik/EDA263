@@ -13,8 +13,8 @@
 
 ### 2.
 
-Fingerprint => "gpg --fingerprint 551B0640"
-0ADD 6020 4121 B03E A4E2  55ED D39C C5E6 551B 0640
+    > gpg --fingerprint 551B0640
+    0ADD 6020 4121 B03E A4E2  55ED D39C C5E6 551B 0640
 
 ### 3.
 
