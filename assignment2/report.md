@@ -83,3 +83,8 @@ A key is marked as trusted by an owner if any of these requirements are meet:
 ... and the path of signed keys leading from the key in question back to your own key is less than six steps.
 
 The trusted parameter for a person in you keychain is the truested-value you have set by your self. The validity on the other hand is the calculated value based on your web-of-trust.
+
+### 8.
+
+- (a) Elena trust: unknown, validity: unknown
+- (b) Elena trust: unknown, validity: marginal
