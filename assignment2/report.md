@@ -27,17 +27,13 @@ Hsin-Kai Chen: I think I won't use it in the future since that most of my friend
 ### 5. (signing)
 
 - A
-  - Confidentiality
-    - The message isn't secure in that sense that it can be readable by anyone. 
   - Integrity
     - Only certain users should be able to change data. The data passed 
     to the system can be verified using signing.
-  - Availability
-    - We use signing to check that only the legitimate user can get the resources from the system. Otherwise we reject it. This can prevent the distributed Denial-of-Service attacks and ensure the availibilty that every part of the system is functioning correctly and the information is available.
 
 - B (signing)
-  - 1. D = H(M) => Hash message M.
-  - 2. S = D xor K => Sign hashed value with equal size key K.
+  - 1. D = H(M) => Hash message M using MD5 or something similar.
+  - 2. S = C_K(D) => Encrypt digested messaged using private key to generate signature.
   - 3. Send S,M to receiver.
 
 - C
@@ -87,4 +83,4 @@ The trusted parameter for a person in you keychain is the truested-value you hav
 ### 8.
 
 - (a) Elena trust: unknown, validity: unknown
-- (b) Elena trust: unknown, validity: marginal
+- (b) Elena trust: unknown, validity: full
